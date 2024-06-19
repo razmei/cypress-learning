@@ -1,0 +1,22 @@
+{
+  "name": "cypress-learning",
+  "version": "1.0.0",
+  "description": "Project for learning Cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/razmei/cypress-learning.git"
+  },
+  "author": "Razvan Meirosu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/razmei/cypress-learning/issues"
+  },
+  "homepage": "https://github.com/razmei/cypress-learning#readme",
+  "devDependencies": {
+    "cypress": "^13.12.0"
+  }
+}
