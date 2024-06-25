@@ -8,6 +8,21 @@ export class LoginPage {
         } 
     }
 
+    validateUserPass() {
+        cy.get('[data-test="signin-submit"]').should('be.enabled').click()
+        cy.get('#username-helper-text').contains('Username is required')
+    }
+
+    validateUsername(password) {
+        cy.get('#password').type(password)
+        cy.get('[data-test="signin-submit"]').should('not.be.enabled')
+    }
+
+    validatePassword(username) {
+        cy.get('#username').type(username)
+        cy.get('[data-test="signin-submit"]').should('not.be.enabled')
+    }
+
     validateLandedOnLogin() {
         cy.get('[data-test="user-onboarding-dialog-title"]').contains('Get Started with Real World App')
       }

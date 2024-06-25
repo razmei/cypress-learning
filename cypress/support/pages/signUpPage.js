@@ -73,6 +73,11 @@ export class SignUpPage {
       cy.get('[data-test="signup-submit"]').should('not.be.enabled')
     }
 
+    signUpSuccessfully(firstName,lastName,userName,password,confirmPassword) {
+      this.fillAllMandatoryFields(firstName,lastName,userName,password,confirmPassword)
+      cy.get('[data-test="signup-submit"]').should('be.enabled').click()
+    }
+
   }
 
 export const onSignUpPage = new SignUpPage()
