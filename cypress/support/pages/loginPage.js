@@ -1,11 +1,11 @@
 export class LoginPage {
 
     enterCredentials(username, password) {
-        if (cy.get('[class="MuiTypography-root MuiTypography-h5"]')) {
+        // if (cy.get('[class="MuiTypography-root MuiTypography-h5"]')) {
             cy.get('#username').type(username)
             cy.get('#password').type(password)
             cy.get('[data-test="signin-submit"]').click()
-        } 
+        // } 
     }
 
     validateUserPass() {

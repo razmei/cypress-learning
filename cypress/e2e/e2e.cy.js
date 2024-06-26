@@ -1,6 +1,7 @@
 import { onHomePage } from "../support/pages/homePage"
 import { onLoginPage } from "../support/pages/loginPage"
 import { onSignUpPage } from "../support/pages/signUpPage"
+import { navigationMenu } from "../support/pages/navigationMenu"
 
 describe('E2E tests', () => {
 
@@ -28,4 +29,17 @@ describe('E2E tests', () => {
     //5. Land on homepage
     onHomePage.verifyFinishMessage()
   })
+
+  it.only('navigation', () => {
+    cy.openLoginPage()
+    onLoginPage.enterCredentials("test","test")
+    navigationMenu.openNotifications()
+    navigationMenu.openHome()
+    navigationMenu.openBankAccounts()
+    navigationMenu.openMyAccount()
+    navigationMenu.checkSideBarVisible()
+    cy.get('[data-test="drawer-icon"]').click()
+    navigationMenu.checkSideBarHidden()
+  })
+    
 })
