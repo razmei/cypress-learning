@@ -13,6 +13,8 @@ export class HomePage {
         cy.get('[data-test="user-onboarding-next"]').click()
     }
 
+    //TODO -> verify bank account creation dialog
+
 }
 
 export const onHomePage = new HomePage()

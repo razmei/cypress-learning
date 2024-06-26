@@ -14,12 +14,12 @@ describe('E2E tests', () => {
     let routingNumber = "123456789"
     let accountNumber = "123456789"
     //1. Visit signup page
-    cy.visit('/signup')
+    cy.openSignupPage()
     //2. Create user
     onSignUpPage.fillAllMandatoryFields(firstName,lastName,userName,password,password)
     onSignUpPage.signUpSuccessfully()
-    //3. Login with user from 2.
-    cy.visit('/signin')
+    //3. Login with user from step 2
+    cy.openLoginPage()
     onLoginPage.enterCredentials(userName,password)
     onLoginPage.validateLandedOnLogin()
     cy.get('[data-test="user-onboarding-next"]').click()
