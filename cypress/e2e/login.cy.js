@@ -1,5 +1,6 @@
 import { onLoginPage } from "../support/pages/loginPage"
 import { onSignUpPage } from "../support/pages/signUpPage"
+import { onHomePage } from "../support/pages/homePage"
 
 describe('Functional tests for the Log In page', () => {
 
@@ -29,8 +30,13 @@ describe('Functional tests for the Log In page', () => {
         onSignUpPage.signUpSuccessfully(firstName,lastName, username, password, password)
         cy.openLoginPage()
         onLoginPage.enterCredentials(username,password)
-        onLoginPage.validateLandedOnLogin()
+        onHomePage.validateIsOnHome()
     })
-    
+
+    it('Validate cannot login with invalid user', () => {
+        cy.openLoginPage()
+        onLoginPage.enterCredentials("invalid","invalid")
+        onLoginPage.valiateInvalidLogin()
+    })
 
 })

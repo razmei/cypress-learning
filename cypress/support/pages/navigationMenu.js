@@ -28,6 +28,10 @@ export class NavigationMenu {
         cy.get('.MuiTypography-root').contains('Notifications')
     }
 
+    logOut() {
+        cy.get('[data-test="sidenav-signout"]').click()
+    }
+
 }
 
 export const navigationMenu = new NavigationMenu()

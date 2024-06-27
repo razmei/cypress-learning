@@ -6,11 +6,11 @@ import { navigationMenu } from "../support/pages/navigationMenu"
 describe('E2E tests', () => {
 
   //set up details
-  let firstName = "First Name Test X"
-  let lastName = "Last Name Test X"
-  let userName = "testX"
-  let password = "testX"
-  let bankName = "Bank X"
+  let firstName = "First Name Test 2"
+  let lastName = "Last Name Test 2"
+  let userName = "test2"
+  let password = "test2"
+  let bankName = "Bank 2"
   let routingNumber = "123456789"
   let accountNumber = "123456789"
 
@@ -23,7 +23,7 @@ describe('E2E tests', () => {
     //3. Login with user from step 2
     cy.openLoginPage()
     onLoginPage.enterCredentials(userName,password)
-    onLoginPage.validateLandedOnLogin()
+    onLoginPage.validateInitialLogin()
     cy.get('[data-test="user-onboarding-next"]').click()
     //4. On homepage create bank account
     onHomePage.createBankAccount(bankName,routingNumber,accountNumber)
