@@ -5,15 +5,16 @@ import { navigationMenu } from "../support/pages/navigationMenu"
 
 describe('E2E tests', () => {
 
+  //set up details
+  let firstName = "First Name Test X"
+  let lastName = "Last Name Test X"
+  let userName = "testX"
+  let password = "testX"
+  let bankName = "Bank X"
+  let routingNumber = "123456789"
+  let accountNumber = "123456789"
+
   it('User signup and initial Bank details set-up', () => {
-    //set up details
-    let firstName = "First Name Test X"
-    let lastName = "Last Name Test X"
-    let userName = "testX"
-    let password = "testX"
-    let bankName = "Bank X"
-    let routingNumber = "123456789"
-    let accountNumber = "123456789"
     //1. Visit signup page
     cy.openSignupPage()
     //2. Create user
@@ -30,9 +31,9 @@ describe('E2E tests', () => {
     onHomePage.verifyFinishMessage()
   })
 
-  it.only('navigation', () => {
+  it('Validate navigation is successful', () => {
     cy.openLoginPage()
-    onLoginPage.enterCredentials("test","test")
+    onLoginPage.enterCredentials(userName,password)
     navigationMenu.openNotifications()
     navigationMenu.openHome()
     navigationMenu.openBankAccounts()
