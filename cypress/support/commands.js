@@ -24,6 +24,10 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+import { onHomePage } from "./pages/homePage"
+import { onLoginPage } from "./pages/loginPage"
+import { onSignUpPage } from "./pages/signUpPage"
+
 Cypress.Commands.add('openHomePage', () => {
     cy.visit('/')
 })
@@ -34,4 +38,12 @@ Cypress.Commands.add('openSignupPage', () => {
 
 Cypress.Commands.add('openLoginPage', () => {
     cy.visit('/signin')
+})
+
+Cypress.Commands.add('createUser', (firstName,lastName,username,password,confirmpassword,bankName,routingNumber,accountNumber) => {
+    cy.openSignupPage()
+    onSignUpPage.signUpSuccessfully(firstName,lastName,username,password,confirmpassword)
+    cy.openLoginPage()
+    onLoginPage.enterCredentials(username, password)
+    onHomePage.initialLoginSetup(bankName,routingNumber,accountNumber)
 })

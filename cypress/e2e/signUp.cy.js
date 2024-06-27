@@ -17,7 +17,7 @@ describe('Functional tests for the Sign Up page', () => {
       onSignUpPage.fillAllMandatoryFields(firstName,lastName,userName,password,password)
       cy.get('form').submit()
       onLoginPage.enterCredentials(userName,password)
-      onLoginPage.validateLandedOnLogin()
+      onLoginPage.validateInitialLogin()
     })
 
     it('Verify all fields are mandatory', () => {
