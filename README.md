@@ -56,10 +56,10 @@ User journeys:
     6. User Settings
         a. Update settings
 
-    7. Login
+    7. Login => DONE
 
-    8. Logout
-        a. Redirect to Login
+    8. Logout => DONE
+        a. Redirect to Login => DONE
 
-    9. Signup
+    9. Signup => DONE
         a. Direct to Login => DONE
