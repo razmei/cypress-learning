@@ -63,3 +63,7 @@ User journeys:
 
     9. Signup => DONE
         a. Direct to Login => DONE
+
+    
+TODO:
+- API login (programatically)

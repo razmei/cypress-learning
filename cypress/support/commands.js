@@ -47,3 +47,33 @@ Cypress.Commands.add('createUser', (firstName,lastName,username,password,confirm
     onLoginPage.enterCredentials(username, password)
     onHomePage.initialLoginSetup(bankName,routingNumber,accountNumber)
 })
+
+Cypress.Commands.add('createUserAPI', (firstName,lastName,username,password) => {
+    cy.log('Creating User...')
+    cy.request({
+        method: 'POST',
+        url: 'http://localhost:3001/users',
+        body: {
+            "firstName": firstName,
+            "lastName": lastName,
+            "username": username,
+            "password": password,
+            "confirmPassword": password
+        },
+        failOnStatusCode: false
+    })
+})
+
+Cypress.Commands.add('loginUserAPI', (username,password) => {
+    cy.log('Logging User In...')
+    cy.request({
+        method: 'POST',
+        url: 'http://localhost:3001/login',
+        body: {
+            "type": "LOGIN",
+            "username": username,
+            "password": password
+        },
+        failOnStatusCode: false
+    })
+})
