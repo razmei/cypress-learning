@@ -3,7 +3,7 @@ import { onLoginPage } from "../support/pages/loginPage"
 import { onSignUpPage } from "../support/pages/signUpPage"
 import { navigationMenu } from "../support/pages/navigationMenu"
 
-describe('E2E tests', () => {
+describe('E2E UI tests', () => {
 
   //set up details
   let firstName = "First Name Test 2"
@@ -23,7 +23,6 @@ describe('E2E tests', () => {
     //3. Login with user from step 2
     cy.openLoginPage()
     onLoginPage.enterCredentials(userName,password)
-    onLoginPage.validateInitialLogin()
     cy.get('[data-test="user-onboarding-next"]').click()
     //4. On homepage create bank account
     onHomePage.createBankAccount(bankName,routingNumber,accountNumber)

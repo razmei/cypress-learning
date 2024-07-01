@@ -13,17 +13,23 @@ describe('Tests the Transactions Home page', () => {
     let bankName = "Home Bank"
     let routingNumber = "100000001"
     let accountNumber = "120000012"
+    let userId
+    let uuid
+    let bankAccountId
 
-    it.only('request tests', () => {       
-           
-        cy.loginUserAPI(userName,password).then((response) => {
-            if (response.status === 200) {
-                cy.log('User exists, no need to create.')
-            } else {
-                cy.createUserAPI(firstName,lastName,userName,password)
-            }
-
+    before('Create test user and bank account', () => {
+        cy.createUserAPI(firstName,lastName,userName,password).then((response) => {
+            userId = response.body.user.userId
+            uuid = response.body.user.uuid
+            cy.log(response)
         })
+        //create Bank account for above user
+        //TODO: graphql request      
+    })
+
+    it.only('verify user and bank details tests', () => {
+
+
 
     })
 

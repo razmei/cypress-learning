@@ -65,5 +65,3 @@ User journeys:
         a. Direct to Login => DONE
 
     
-TODO:
-- API login (programatically)
