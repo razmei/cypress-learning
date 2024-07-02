@@ -65,3 +65,7 @@ User journeys:
         a. Direct to Login => DONE
 
     
+
+
+//TODOs:
+create PageObject class with each page selectors or fixtures with selectors
